@@ -20,7 +20,7 @@ public class EmailController {
     private EmailRepository emailRepository;
 
     @PostMapping("/sendingMail")
-    public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto){//recebo os parametros e Valid com o @Valid
+    public ResponseEntity<EmailModel> sendingEmail(@RequestBody EmailDto emailDto){//recebo os parametros e Valid com o @Valid
         EmailModel emailModel = new EmailModel();
         BeanUtils.copyProperties(emailDto, emailModel);//converto o DTO no model instanciado acima
         emailService.sendEmail(emailModel);//criar método no service
