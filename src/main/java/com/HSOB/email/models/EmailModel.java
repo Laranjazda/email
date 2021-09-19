@@ -13,7 +13,7 @@ public class EmailModel {
     private static final long serialVersion = 1L;
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long emailId;
     private String ownerRef; //referencia de quem envia
     private String emailFrom;

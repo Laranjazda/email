@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class StatusDBOConnections {
     @GetMapping(path = "/api/status")
     public String checkStatus(){
-        return "H.S.O.B. Microservice Email Online ";
+        return "H.S.O.B." + "\nHorny son of a bitch ONLINE";
     }
 }
