@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity//entou dizendo que essa classe é uma entidade do banco de dados
 @Document(collection = "api_email")
 public class EmailModel {
     private static final long serialVersion = 1L;
@@ -15,10 +15,12 @@ public class EmailModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long emailId;
+
     private String ownerRef; //referencia de quem envia
     private String emailFrom;
     private String emailTo;
     private String subject;
+
     @Column(columnDefinition = "TEXT")
     private String text;
     private LocalDateTime sendDateEmail;
