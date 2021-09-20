@@ -5,17 +5,19 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
+@Data
 @Entity//entou dizendo que essa classe é uma entidade do banco de dados
 @Document(collection = "api_email")
-public class EmailModel {
-    private static final long serialVersion = 1L;
+public class EmailModel  implements Serializable {
+//    private static final long serialVersion = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long emailId;
-
+    private UUID emailId;//https://medium.com/trainingcenter/o-que-%C3%A9-uuid-porque-us%C3%A1-lo-ad7a66644a2b
     private String ownerRef; //referencia de quem envia
     private String emailFrom;
     private String emailTo;
@@ -26,11 +28,11 @@ public class EmailModel {
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;//criar a entidade
 
-    public Long getEmailId() {
+    public UUID getEmailId() {
         return emailId;
     }
 
-    public void setEmailId(Long emailId) {
+    public void setEmailId(UUID emailId) {
         this.emailId = emailId;
     }
 

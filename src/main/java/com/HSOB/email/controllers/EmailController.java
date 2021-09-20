@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/api")
+//@RequestMapping(value = "/api")
 public class EmailController {
     @Autowired//impostação do repositori e poder utiliar os metodos apra conectar no banco de dados
-    private EmailService emailService;
-    private EmailRepository emailRepository;
+    EmailService emailService;
+//    private EmailRepository emailRepository;
 
     @PostMapping("/sendingMail")
     public ResponseEntity<EmailModel> sendingEmail(@RequestBody EmailDto emailDto){//recebo os parametros e Valid com o @Valid
@@ -26,4 +26,5 @@ public class EmailController {
         emailService.sendEmail(emailModel);//criar método no service
         return new ResponseEntity<>(emailModel, HttpStatus.OK);
     }
+
 }

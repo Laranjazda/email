@@ -15,6 +15,8 @@ import javax.validation.constraints.NotBlank;
 public class EmailDto {
     EmailModel emailModel = new EmailModel();
 
+
+
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
 //    private Long emailId ;
